@@ -1,0 +1,40 @@
+﻿@model work_01_with_Image.Models.ViewModels.ProductVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <h3 class="text-primary text-center">@TempData["msg"]</h3>
+</div>
+<div class="row">
+
+    <div class="col-4">
+        <h2>Add New Product</h2>
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <label asp-for="Name" class="col-form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Unit" class="col-form-label"></label>
+                <input asp-for="Unit" class="form-control" />
+                <span asp-validation-for="Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Price" class="col-form-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Image" class="col-form-label"></label>
+                <input asp-for="Image" type="file" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
